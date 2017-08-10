@@ -62,7 +62,7 @@ public class LoginPanel extends JPanel {
 				for (UsuarioSistema u : LoginPanel.this.app.getUsuariosCadastrados()) {
 					if(u.getLogin().equals(nomeDoUsuarioQueQuerLogar) && u.getSenha().equals(senhaDoUsuarioQueQuerLogar)) {
 						LoginPanel.this.app.getUsuariosLogados().add(u);
-						System.out.println("Usuario logado com sucesso");
+						System.out.println("Usuario logado com Exito");
 						System.out.println(u.getNome());
 						System.out.println(u.getLogin());
 						break;
