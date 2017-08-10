@@ -32,20 +32,20 @@ public class LoginPanel extends JPanel {
 		//Layout padroa é o border layout
 		//https://docs.oracle.com/javase/tutorial/uiswing/layout/border.html
 		this.app = app;
-		this.setBackground(new Color(0,0,0));
+		this.setBackground(new Color(0,128,128));//cor Teal
 		
 		this.add(this.tituloDaTelaLabel);
 		this.setLayout(new GridLayout(0, 1));
 		
 		JPanel jPnLogin = new JPanel(new FlowLayout());
 		//jPnLogin.setPreferredSize(new Dimension(200, 200));
-		jPnLogin.setBackground(new Color(0,0,0));		
+		jPnLogin.setBackground(new Color(135,206,250));//Cor Light Skyblue		
 		jPnLogin.add(loginLabel);		
 		jPnLogin.add(loginTxtField);
 		
 		JPanel jPnSenha = new JPanel(new FlowLayout());
 		//jPnSenha.setPreferredSize(new Dimension(200, 200));
-		jPnSenha.setBackground(new Color(0,0,0));
+		jPnSenha.setBackground(new Color(152,251,152));//cor Pale green
 		jPnSenha.add(senhaLabel);
 		jPnSenha.add(senhaPasswdField);
 		
