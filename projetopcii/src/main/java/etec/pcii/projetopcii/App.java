@@ -30,9 +30,9 @@ private static String versao = "v1";
 		
 		UsuarioSistema Danrley = new UsuarioSistema("Danrley Candido","Donkazuya","12345");
 		UsuarioSistema Dimas = new UsuarioSistema("Dimas Pierre","Peter","abcde");
-		JdbcDAO<Pessoa> jdbc_Pessoa_DAO = new JdbcDAO<Pessoa>();
-		jdbc_Pessoa_DAO.inserir(Danrley);
-		jdbc_Pessoa_DAO.inserir(Dimas);
+		//JdbcDAO<Pessoa> jdbc_Pessoa_DAO = new JdbcDAO<Pessoa>();
+		//jdbc_Pessoa_DAO.inserir(Danrley);
+		//jdbc_Pessoa_DAO.inserir(Dimas);
 		
 		
 		
@@ -71,8 +71,8 @@ private static String versao = "v1";
 	
     public static void main( String[] args ) throws Exception
     {
-    	App program = new App();
+    	//App program = new App();
     	
-    	//new App();
+    	new App();
     }
 }
