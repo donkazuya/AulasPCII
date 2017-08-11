@@ -39,13 +39,13 @@ public class LoginPanel extends JPanel {
 		
 		JPanel jPnLogin = new JPanel(new FlowLayout());
 		//jPnLogin.setPreferredSize(new Dimension(200, 200));
-		jPnLogin.setBackground(new Color(135,206,250));//Cor Light Skyblue		
+		jPnLogin.setBackground(new Color(0,128,128));//Cor Light Skyblue		
 		jPnLogin.add(loginLabel);		
 		jPnLogin.add(loginTxtField);
 		
 		JPanel jPnSenha = new JPanel(new FlowLayout());
 		//jPnSenha.setPreferredSize(new Dimension(200, 200));
-		jPnSenha.setBackground(new Color(152,251,152));//cor Pale green
+		jPnSenha.setBackground(new Color(0,128,128));//cor Pale green
 		jPnSenha.add(senhaLabel);
 		jPnSenha.add(senhaPasswdField);
 		
