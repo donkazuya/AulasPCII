@@ -11,6 +11,7 @@ public class Conexao {
 	String stringDeConexao = "jdbc:mysql://localhost/escola;user=root";
 	Connection connection = DriverManager.getConnection(stringDeConexao,"root","");
 	Class.forName("com.mysql.jdbc.Driver");
+	System.out.println(connection);
 	return connection;
 	
 	}

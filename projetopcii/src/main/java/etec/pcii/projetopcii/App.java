@@ -3,6 +3,7 @@ package etec.pcii.projetopcii;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -11,6 +12,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 import etec.pcii.projetopcii.model.UsuarioSistema;
+import etec.pcii.projetopcii.persistence.Conexao;
 import etec.pcii.projetopcii.swing.view.LoginPanel;
 
 public class App 
@@ -74,5 +76,7 @@ private static String versao = "v1";
     	//App program = new App();
     	
     	new App();
+    	Connection conn = new Conexao().getMysqlConnection();
+    	System.out.println(conn);
     }
 }
