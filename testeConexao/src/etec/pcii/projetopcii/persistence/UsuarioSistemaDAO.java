@@ -3,7 +3,7 @@ package etec.pcii.projetopcii.persistence;
 import java.sql.Connection;
 import etec.pcii.projetopcii.model.UsuarioSistema;
 
-public class UsuarioSistemaDAO {
+public class UsuarioSistemaDAO implements IDAO {
 	
 	Connection conn;
 	
@@ -11,13 +11,18 @@ public class UsuarioSistemaDAO {
 		this.conn = conn;
 	}
 	
-	public void inserir(UsuarioSistema a){
-		String sql = "insert into Tbl_UsuariosDoSistema (nomelogin) values ('"+a.getLogin()+"')";
+	public void inserir(Object o){
+		
+		
+		
+		
+		String sql = "insert into Tbl_UsuariosDoSistema (nomelogin) values ('"+((UsuarioSistema)o).getLogin()+"')";
 //		String sqlLogin ="insert into login(nomelogin) values ('"+a.getLogin()+"')";
 //		String sqlSenha = "insert into login(senha) values ('"+a.getSenha()+"')";
-		System.out.println(sql);
+		//System.out.println(sql);
 		
 		
 	}
 
 }
+
