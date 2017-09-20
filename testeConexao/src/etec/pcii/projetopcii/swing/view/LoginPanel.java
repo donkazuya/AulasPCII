@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -59,17 +60,29 @@ public class LoginPanel extends JPanel {
 				App app2 = LoginPanel.this.app;
 				List<UsuarioSistema> usuariosCadastrados = LoginPanel.this.app.getUsuariosCadastrados();
 				
+				
 				for (UsuarioSistema u : LoginPanel.this.app.getUsuariosCadastrados()) {
 					if(u.getLogin().equals(nomeDoUsuarioQueQuerLogar) && u.getSenha().equals(senhaDoUsuarioQueQuerLogar)) {
 						LoginPanel.this.app.getUsuariosLogados().add(u);
 						System.out.println("Usuario logado com Exito");
 						System.out.println(u.getNome());
 						System.out.println(u.getLogin());
-						break;
+						
+						AlunoPanel formAluno = new AlunoPanel();
+						setVisible(false);
+						formAluno.setVisible(true);
+						
+						
 					}//if
+					else{
+						
+						JOptionPane.showMessageDialog(null,"Usuario ou Senha nao conferem!!!");
+						loginTxtField.setText("");
+						senhaPasswdField.setText("");
+					}
 				}//for
 				
-				System.out.println("Usuario ou Senha nao conferem!!!");
+				
 			}
 		});
 		

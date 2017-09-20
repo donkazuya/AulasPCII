@@ -18,7 +18,8 @@ public class AlunoPanel extends JFrame {
 		super ("Area Aluno");
 		Container tela = getContentPane();
 		
-		
+		setSize(500,500);
+		setVisible(true);
 		
 	}
 

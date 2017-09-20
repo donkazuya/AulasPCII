@@ -33,7 +33,7 @@ private static String versao = "v1";
 
 	
 	public App() throws Exception {
-		//this.usuariosCadastrados.add(new UsuarioSistema("Administrador", "admin", "admin123"));
+		this.usuariosCadastrados.add(new UsuarioSistema("Administrador", "admin", "123456"));
 		//this.usuariosCadastrados.add(new UsuarioSistema("Danrley", "Donkazuya", "123456"));
 		this.apresentarPainelDeLogin();
 		
