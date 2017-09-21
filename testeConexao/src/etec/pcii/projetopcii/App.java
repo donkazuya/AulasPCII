@@ -20,6 +20,7 @@ import javax.swing.JFrame;
 import etec.pcii.projetopcii.model.UsuarioSistema;
 import etec.pcii.projetopcii.persistence.Conexao;
 import etec.pcii.projetopcii.persistence.UsuarioSistemaDAO;
+import etec.pcii.projetopcii.swing.view.AlunoPanel;
 import etec.pcii.projetopcii.swing.view.LoginPanel;
 
 public class App 
@@ -51,9 +52,20 @@ private static String versao = "v1";
 		JFrame jFrame =  new JFrame("Tela Principal");
 		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 		System.out.println(this);
-		jFrame.add(new LoginPanel(this));				
-		jFrame.pack();		
+		jFrame.add(new LoginPanel(this));
+		jFrame.pack();
+		jFrame.setLocationRelativeTo(null);
 		jFrame.setVisible(true);
+	}
+	
+	public void apresentarTelaAluno() {
+		JFrame telaAluno = new JFrame("Cadastro Aluno");
+		telaAluno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telaAluno.add(new AlunoPanel());
+		telaAluno.setLocationRelativeTo(null);
+		telaAluno.setVisible(true);
+		
+		
 	}
 
 	public List<UsuarioSistema> getUsuariosCadastrados() {

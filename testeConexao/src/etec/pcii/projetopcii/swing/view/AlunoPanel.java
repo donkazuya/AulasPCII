@@ -8,7 +8,7 @@ import java.awt.event.*;
 
 public class AlunoPanel extends JFrame {
 	
-	private JLabel titulo = new JLabel("Alunos: ");
+	private JLabel titulo = new JLabel("Cadastro de Alunos");
 	private JLabel lblNomeAluno = new JLabel ("Nome do aluno: ");
 	private JLabel lblRm = new JLabel("RM: ");
 	private JTextField txtNomeAluno = new JTextField("",100);
@@ -16,10 +16,25 @@ public class AlunoPanel extends JFrame {
 	
 	public AlunoPanel() {
 		super ("Area Aluno");
-		Container tela = getContentPane();
 		
-		setSize(500,500);
+		Container tela = getContentPane();
+		getContentPane().setBackground(new Color (211,211,211));
+		//this.setLocationRelativeTo(null);
+		
+		setLayout(null);
+		titulo.setBounds(230,20,130,20);
+		
+		
+		
+		
+		
+		
+		tela.add(titulo);
+		tela.add(lblNomeAluno);
+		tela.add(lblRm);
+		setSize(630,400);
 		setVisible(true);
+		
 		
 	}
 

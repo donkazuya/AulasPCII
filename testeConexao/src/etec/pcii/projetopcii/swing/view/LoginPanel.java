@@ -1,17 +1,16 @@
 package etec.pcii.projetopcii.swing.view;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.logging.Logger;
+import java.awt.*;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -23,9 +22,9 @@ public class LoginPanel extends JPanel {
 	private App app;
 	private JLabel tituloDaTelaLabel = new JLabel("Painel de Login");
 	private JLabel loginLabel =  new JLabel("Login");		
-	private JTextField loginTxtField  =  new JTextField("",50);
+	private JTextField loginTxtField  =  new JTextField("admin",50);
 	private JLabel senhaLabel = new JLabel("Senha");
-	private JPasswordField senhaPasswdField = new JPasswordField("",50);
+	private JPasswordField senhaPasswdField = new JPasswordField("123456",50);
 	private JButton btnLogin = new JButton("OK");
 	private Object screen;
 		
@@ -33,6 +32,7 @@ public class LoginPanel extends JPanel {
 		//Layout padroa é o border layout
 		//https://docs.oracle.com/javase/tutorial/uiswing/layout/border.html
 		this.app = app;
+		
 		this.setBackground(new Color(0,128,128));//cor Teal
 		
 		this.add(this.tituloDaTelaLabel);
@@ -64,13 +64,13 @@ public class LoginPanel extends JPanel {
 				for (UsuarioSistema u : LoginPanel.this.app.getUsuariosCadastrados()) {
 					if(u.getLogin().equals(nomeDoUsuarioQueQuerLogar) && u.getSenha().equals(senhaDoUsuarioQueQuerLogar)) {
 						LoginPanel.this.app.getUsuariosLogados().add(u);
-						System.out.println("Usuario logado com Exito");
-						System.out.println(u.getNome());
-						System.out.println(u.getLogin());
+						
 						
 						AlunoPanel formAluno = new AlunoPanel();
 						setVisible(false);
+						
 						formAluno.setVisible(true);
+						JOptionPane.showMessageDialog(null, "Bem Vindo");
 						
 						
 					}//if
@@ -87,10 +87,13 @@ public class LoginPanel extends JPanel {
 		});
 		
 		
-		this.add(tituloDaTelaLabel);
+		//this.add(tituloDaTelaLabel);
 		this.add(jPnSenha);
 		this.add(jPnLogin);
 		this.add(btnLogin);		
+		
+		//setSize(250,300);
+		//setVisible(true);
 	}
 
 }
