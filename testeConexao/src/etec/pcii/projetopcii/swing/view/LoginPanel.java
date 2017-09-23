@@ -67,10 +67,15 @@ public class LoginPanel extends JPanel {
 						
 						
 						AlunoPanel formAluno = new AlunoPanel();
-						setVisible(false);
-						
+						Container parent = getParent();
+						Container parent2 = parent.getParent().getParent().getParent();
+						parent2.setVisible(false);
 						formAluno.setVisible(true);
+						
 						JOptionPane.showMessageDialog(null, "Bem Vindo");
+						
+						
+						
 						
 						
 					}//if
@@ -80,11 +85,16 @@ public class LoginPanel extends JPanel {
 						loginTxtField.setText("");
 						senhaPasswdField.setText("");
 					}
+					
+					
+					
 				}//for
 				
 				
 			}
 		});
+		
+		
 		
 		
 		//this.add(tituloDaTelaLabel);

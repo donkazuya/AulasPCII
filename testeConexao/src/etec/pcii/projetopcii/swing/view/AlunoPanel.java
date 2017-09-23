@@ -19,9 +19,11 @@ public class AlunoPanel extends JFrame {
 		
 		Container tela = getContentPane();
 		getContentPane().setBackground(new Color (211,211,211));
-		//this.setLocationRelativeTo(null);
+		
 		
 		setLayout(null);
+		
+		setLocationRelativeTo(null);
 		titulo.setBounds(230,20,130,20);
 		
 		

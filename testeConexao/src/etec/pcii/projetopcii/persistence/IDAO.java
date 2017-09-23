@@ -1,7 +1,9 @@
 package etec.pcii.projetopcii.persistence;
 
-public interface IDAO {
-	
-	void inserir (Object o) throws Exception;
+import java.util.List;
 
+public interface IDAO <T> {
+	
+	void inserir (T o) throws Exception;
+	List listar() throws Exception;
 }

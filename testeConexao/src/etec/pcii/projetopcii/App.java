@@ -58,7 +58,7 @@ private static String versao = "v1";
 		jFrame.setVisible(true);
 	}
 	
-	public void apresentarTelaAluno() {
+	/*public void apresentarTelaAluno() {
 		JFrame telaAluno = new JFrame("Cadastro Aluno");
 		telaAluno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		telaAluno.add(new AlunoPanel());
@@ -66,7 +66,7 @@ private static String versao = "v1";
 		telaAluno.setVisible(true);
 		
 		
-	}
+	}*/
 
 	public List<UsuarioSistema> getUsuariosCadastrados() {
 		System.out.println("public List<UsuarioSistema> getUsuariosCadastrados() {..." + this.usuariosCadastrados.size());

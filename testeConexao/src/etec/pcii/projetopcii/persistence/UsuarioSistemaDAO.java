@@ -4,10 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import etec.pcii.projetopcii.model.UsuarioSistema;
 
-public class UsuarioSistemaDAO implements IDAO {
+public class UsuarioSistemaDAO <T extends UsuarioSistema>implements IDAO<T> {
 	
 	Connection conn;
 	
@@ -15,22 +16,28 @@ public class UsuarioSistemaDAO implements IDAO {
 		this.conn = conn;
 	}
 	
-	public void inserir(Object o) throws Exception{
+	
+	@Override
+	public void inserir(T o) throws Exception{
 		
 	
 		String sql = "insert into tbl_usuariosistema (nomeLogin,senha) values ('"+((UsuarioSistema)o).getLogin()+"','"+((UsuarioSistema)o).getSenha()+"')";
-		
-		
 		// Preparando para salvar as informações pro banco
 		PreparedStatement prepareStatement = conn.prepareStatement(sql);
 		prepareStatement.execute();
-		
-//		String sqlLogin ="insert into login(nomelogin) values ('"+a.getLogin()+"')";
-//		String sqlSenha = "insert into login(senha) values ('"+a.getSenha()+"')";
 		System.out.println(sql);
 		
 		
 	}
+
+
+	@Override
+	public List listar() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 
 }
 
