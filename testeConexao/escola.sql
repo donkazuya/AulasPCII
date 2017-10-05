@@ -6,7 +6,7 @@ create table tbl_usuariosistema(
 	id_usuario int primary key auto_increment,
 	nomeLogin varchar (64) not null,
 	senha varchar (64) not null,
-	id_pessoa int not null
+	id_pessoa int 
 );
 
 create table tbl_pessoa(
@@ -14,7 +14,7 @@ create table tbl_pessoa(
 	nomePessoa varchar (200) not null
 );
 
-create table tbl_Aluno(
+create table alunos(
 	id_aluno int primary key auto_increment,
 	rm int not null,
 	nomeAluno varchar (200) not null,
@@ -26,7 +26,7 @@ add constraint fk_usuariosistema_pessoa
 foreign key (id_pessoa)
 references tbl_pessoa(id_pessoa);
 
-alter table tbl_Aluno
+alter table alunos
 add constraint fk_aluno_pessoa
 foreign key (id_pessoa)
 references tbl_pessoa (id_pessoa);

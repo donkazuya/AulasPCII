@@ -69,8 +69,22 @@ private static String versao = "v1";
 	}*/
 
 	public List<UsuarioSistema> getUsuariosCadastrados() {
+		
+		//define as variaveis para o acesso
+		Connection conne;
+		List listagemDeUsuarios = null;
+		
+		try {
+			conne = new Conexao().getMysqlConnection();
+			UsuarioSistemaDAO listagem = new UsuarioSistemaDAO(conne);
+			listagemDeUsuarios = listagem.listar();
+		} catch (Exception e) {
+		
+			e.printStackTrace();
+		}
+		
 		System.out.println("public List<UsuarioSistema> getUsuariosCadastrados() {..." + this.usuariosCadastrados.size());
-		return usuariosCadastrados;
+		return listagemDeUsuarios;
 	}
 
 	public UsuarioSistema getUsuarioLogado() {
@@ -101,7 +115,7 @@ private static String versao = "v1";
     	
     	//update inserindo informaçoes no banco de dados
     	UsuarioSistemaDAO usuarioSistemaDAO = new UsuarioSistemaDAO(conn);
-    	UsuarioSistema u = new UsuarioSistema("huginhio da silva", "huguinho", "123");
+    	UsuarioSistema u = new UsuarioSistema("Danrley Candido", "Danrley", "123");
     	usuarioSistemaDAO.inserir(u);
 //    	String sql = "insert into alunos (nome) values ('NomeAluno1')";
 //    	

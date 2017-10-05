@@ -22,11 +22,11 @@ public class UsuarioSistemaDAO <T extends UsuarioSistema>implements IDAO<T> {
 	public void inserir(T o) throws Exception{
 		
 	
-		String sql = "insert into tbl_usuariosistema (nomeLogin,senha) values ('"+((UsuarioSistema)o).getLogin()+"','"+((UsuarioSistema)o).getSenha()+"')";
-		// Preparando para salvar as informações pro banco
-		PreparedStatement prepareStatement = conn.prepareStatement(sql);
-		prepareStatement.execute();
-		System.out.println(sql);
+		//String sql = "insert into tbl_usuariosistema (nomeLogin,senha) values ('"+((UsuarioSistema)o).getLogin()+"','"+((UsuarioSistema)o).getSenha()+"')";
+		//Preparando para salvar as informações pro banco
+		//PreparedStatement prepareStatement = conn.prepareStatement(sql);
+		//prepareStatement.execute();
+		//System.out.println(sql);
 		
 		
 	}
@@ -35,13 +35,14 @@ public class UsuarioSistemaDAO <T extends UsuarioSistema>implements IDAO<T> {
 	@Override
 	public List listar() throws Exception {
 		List<UsuarioSistema> listaDeUsuarios = new ArrayList<>();
-		PreparedStatement prepareStatement = conn.prepareStatement("select  p.nome as nomeDapessoa from tbl_usuariosistema as u join tblPess as p ");
+		PreparedStatement prepareStatement = conn.prepareStatement(" select p.nomePessoa, u.nomeLogin, u.senha from tbl_usuariosistema as u inner join tbl_pessoa as p where u.id_pessoa = p.id_pessoa ");
 		ResultSet rs = prepareStatement.executeQuery();
 		while (rs.next()){
-			String login = rs.getString("usuarioLogin");
-			String nomeDaPessoa = rs.getString("nomeDaPessoa");
-			String senhaLogin = rs.getString("senhaLogin");
+			String login = rs.getString("nomeLogin");
+			String nomeDaPessoa = rs.getString("nomePessoa");
+			String senhaLogin = rs.getString("senha");
 			UsuarioSistema usu = new UsuarioSistema(nomeDaPessoa,login,senhaLogin);
+			listaDeUsuarios.add(usu);
 			
 		}
 		return listaDeUsuarios;
