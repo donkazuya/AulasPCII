@@ -74,12 +74,13 @@ private static String versao = "v1";
 		Connection conne;
 		List listagemDeUsuarios = null;
 		
+		//Tratamento de erros
 		try {
 			conne = new Conexao().getMysqlConnection();
 			UsuarioSistemaDAO listagem = new UsuarioSistemaDAO(conne);
 			listagemDeUsuarios = listagem.listar();
 		} catch (Exception e) {
-		
+			//informa dentro do bloco try onde ocorreu o erro
 			e.printStackTrace();
 		}
 		
@@ -113,7 +114,7 @@ private static String versao = "v1";
 
     	Connection conn = new Conexao().getMysqlConnection();
     	
-    	//update inserindo informaçoes no banco de dados
+    	//update inserindo informaÃ§oes no banco de dados
     	UsuarioSistemaDAO usuarioSistemaDAO = new UsuarioSistemaDAO(conn);
     	UsuarioSistema u = new UsuarioSistema("Danrley Candido", "Danrley", "123");
     	usuarioSistemaDAO.inserir(u);
